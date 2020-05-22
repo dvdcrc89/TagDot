@@ -1,6 +1,12 @@
 
 <nav>
-    <button [disabled]="!(entities[active] && entities[active].parent)" mat-fab  (click)="back()" title="Back"><i class="material-icons">keyboard_return</i></button>
+    <button 
+        [disabled]="!(entities[active] && entities[active].parent)" 
+        mat-fab  
+        (click)="back()" 
+        title="Back">
+            <i class="material-icons">keyboard_return</i>
+    </button>
     <button mat-fab (click)="openDialog()"><i class="material-icons" title="Add Tag">library_add</i></button>
     <button mat-fab (click)="logOut()"><i class="material-icons" title="Logout">logout</i></button>
 
@@ -11,16 +17,34 @@
     <div class="search__bar">
         <p class="search__text">Search</p>
         <input type="text" [(ngModel)]="search" class="search" (keyup) ="filter()"/>
-        <button *ngIf="search.length > 0" mat-mini-fab color="warn" (click)="endSearch()"><i class="material-icons" title="Clear">close</i></button>
+        <button *ngIf="search.length > 0" 
+                mat-mini-fab 
+                color="warn" 
+                (click)="endSearch()">
+                    <i class="material-icons" title="Clear">close</i>
+        </button>
 
     </div>
 </div>
 
 
 <div class="children">
-    <tag_children *ngIf="search.length === 0" [elements]="children" (setActiveEmitter)="setActive($event)" (removeEmitter)="remove($event)" (editEmitter)="edit($event)"></tag_children>
+    <tag_children   *ngIf="search.length === 0" 
+                    [elements]="children" 
+                    (setActiveEmitter)="setActive($event)" 
+                    (removeEmitter)="remove($event)" 
+                    (editEmitter)="edit($event)">
+    </tag_children>
+
     <p *ngIf="search.length > 0"  class="search__results__text">Search Results</p>
-    <tag_children *ngIf="search.length > 0"   [elements]="searchResults" (setActiveEmitter)="setActive($event)" (removeEmitter)="remove($event)" (editEmitter)="edit($event)"></tag_children>
+    
+    <tag_children   *ngIf="search.length > 0"   
+                    [elements]="searchResults" 
+                    (setActiveEmitter)="setActive($event)" 
+                    (removeEmitter)="remove($event)" 
+                    (editEmitter)="edit($event)">
+    </tag_children>
+    
 </div>
 
 

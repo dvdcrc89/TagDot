@@ -104,11 +104,12 @@ export class TagContainer implements OnInit {
     this.router.navigate(['/'])
   }
 
-  /**Search Tag */
+  /**Search Tags */
   public filter(){
       this.searchResults = this.elements.filter(el_ => el_.tag.toLowerCase().indexOf(this.search.toLowerCase())>-1)
   }
 
+  /** End search mode*/
   public endSearch(){
     this.search = ''
   }
