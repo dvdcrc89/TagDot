@@ -16,8 +16,8 @@ export class TagContainer implements OnInit {
   /**List of all the Tags */
   public elements: Tag[]
 
-   /**List of all the Tags */
-   public searchResults: Tag[]
+  /**List of all the Tags */
+  public searchResults: Tag[]
   
   /** All Tags as key value pair for easy access */
   public entities: {id: Tag} = Object.create(null)
@@ -25,7 +25,9 @@ export class TagContainer implements OnInit {
   /** ID of the selected Tag */
   public active: string = 'root'
 
+  /** Search string  */
   public search: string =''
+
   /** Get All children of the selected Tag */
   public get children(): Tag[] { 
     return this.elements ? this.elements.filter(el_ => el_.parent === this.active) : []}
