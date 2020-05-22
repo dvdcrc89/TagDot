@@ -13,6 +13,9 @@ export class TagComponent implements OnInit {
   @Input()
   public disableEdit:boolean = false
   
+  @Input()
+  public selected:boolean = false
+  
   @Output()
   public removeEmitter: EventEmitter<Tag> = new EventEmitter()
 

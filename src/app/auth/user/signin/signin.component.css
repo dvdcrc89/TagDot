@@ -49,7 +49,7 @@ section{
     height: 100px;
   }
   .signUp{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.8em;
     font-weight: lighter;
     text-align: center;
@@ -57,7 +57,7 @@ section{
   .alert{
     width: 100%;
     font-size:0.7rem;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-align: center;
     background:red; 
     color:white;

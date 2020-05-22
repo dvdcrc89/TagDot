@@ -1,9 +1,9 @@
-<div *ngIf="tag" class="tag__container">
+<div *ngIf="tag" class="tag__container" [ngClass]="{'selected':selected }">
     <div class="tag__body">
         <p *ngIf="!editMode" class="tag__title">{{tag.tag}}</p>
         <div class="tag__edit" *ngIf="editMode">
-            <input matInput [(ngModel)] = "tag.tag" type="text"  >
-            <button button color="primary" (click)="edit()">OK</button>
+            <input class="edit_text" matInput [(ngModel)] = "tag.tag" type="text"  >
+            <button mat-raised-button color="primary" (click)="edit()">OK</button>
         </div>
     </div>
     <div *ngIf="tag.id !=='root' && !disableEdit" class="tag__actions">

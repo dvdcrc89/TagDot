@@ -3,7 +3,7 @@
     width: 400px;
     height: 200px;
     border-radius:8px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0 auto;
     margin-bottom:10px; 
     box-shadow: 0 6px 3px 0 rgba(74,74,74,.06);
@@ -30,6 +30,7 @@
 }
 
 .tag__title{
+    font-family: 'Poppins-Bold', sans-serif;
     font-size: 2rem;
     color:#4A4A4A;
 }
@@ -37,6 +38,19 @@
 .tag__actions{
     display: flex;
     justify-content: space-around;
+}
+
+.edit_text{
+    font-size:1.3rem;
+    color: #8A2BE2;
+    max-width: 80%;
+    margin-bottom: 5px;
+}
+
+
+.selected .tag__title {
+    font-size: 2.3rem;
+    font-family: 'Poppins-Extra', sans-serif;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
