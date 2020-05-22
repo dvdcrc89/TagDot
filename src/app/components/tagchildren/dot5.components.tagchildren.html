@@ -1,0 +1,3 @@
+<div class="children__container">
+    <tag *ngFor= "let item of elements"  [tag]="item" (setActiveEmitter)="setActive($event)" (removeEmitter)="remove($event)" (editEmitter)="edit($event)"></tag>
+</div>

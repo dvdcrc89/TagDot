@@ -1,0 +1,33 @@
+nav{
+    width: 100vw;
+    height: 100px;
+    max-width: 100vw;
+    background: #091421;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+nav button{
+    margin: 0 100px;
+}
+
+.selected{
+    padding: 5% 0;
+    background: #091421;
+}
+
+.children {
+    padding: 5% 0;
+    background: #ffffff;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    nav{
+        justify-content: space-evenly;
+    }
+    nav button{
+        margin: 0;
+    }
+}

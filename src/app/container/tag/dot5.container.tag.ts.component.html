@@ -1,0 +1,18 @@
+
+<nav>
+    <button [disabled]="!(entities[active] && entities[active].parent)" mat-fab  (click)="back()" title="Back"><i class="material-icons">keyboard_return</i></button>
+    <button mat-fab (click)="openDialog()"><i class="material-icons" title="Add Tag">library_add</i></button>
+    <button mat-fab (click)="logOut()"><i class="material-icons" title="Logout">logout</i></button>
+
+</nav>
+
+<div class="selected">
+    <tag *ngIf="entities" [tag]="entities[active]" [disableEdit]="true"></tag>
+</div>
+
+
+<div class="children">
+    <tag_children [elements]="children" (setActiveEmitter)="setActive($event)" (removeEmitter)="remove($event)" (editEmitter)="edit($event)"></tag_children>
+</div>
+
+
