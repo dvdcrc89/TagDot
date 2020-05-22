@@ -7,6 +7,7 @@ import { TagContainer } from './container/tag/dot5.container.tag.ts.component';
 import { TagChildrenComponent } from './components/tagchildren/dot5.components.tagchildren';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AuthModule }         from './auth/user/auth.module';
 
 /**Angular Material */
 import { MatButtonModule }    from '@angular/material/button';
@@ -35,6 +36,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatIconModule,
     MatDialogModule,
     MatFormFieldModule,
+    AuthModule
 
   ],
   providers: [],

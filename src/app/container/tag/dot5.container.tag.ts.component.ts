@@ -93,9 +93,9 @@ export class TagContainer implements OnInit {
     });
   }
 
-  /**Log Auth */
+  /**Log out */
   public logOut(){
-  
+    this.authService.logout()
     this.router.navigate(['/'])
   }
 }
