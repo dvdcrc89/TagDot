@@ -15,6 +15,9 @@ export class TagContainer implements OnInit {
   
   /**List of all the Tags */
   public elements: Tag[]
+
+   /**List of all the Tags */
+   public searchResults: Tag[]
   
   /** All Tags as key value pair for easy access */
   public entities: {id: Tag} = Object.create(null)
@@ -22,8 +25,10 @@ export class TagContainer implements OnInit {
   /** ID of the selected Tag */
   public active: string = 'root'
 
+  public search: string =''
   /** Get All children of the selected Tag */
-  public get children(): Tag[] { return this.elements ? this.elements.filter(el_ => el_.parent === this.active) : []}
+  public get children(): Tag[] { 
+    return this.elements ? this.elements.filter(el_ => el_.parent === this.active) : []}
   
   constructor(
     private webSocket: WebsocketService, 
@@ -58,7 +63,7 @@ export class TagContainer implements OnInit {
 
   /** Set a Tag as active */
   public setActive(id_){
-    id_ && (this.active = id_)
+    id_ && (this.active = id_) && this.endSearch()
   }
 
   /**Navigate back to parent container */
@@ -97,5 +102,14 @@ export class TagContainer implements OnInit {
   public logOut(){
     this.authService.logout()
     this.router.navigate(['/'])
+  }
+
+  /**Search Tag */
+  public filter(){
+      this.searchResults = this.elements.filter(el_ => el_.tag.toLowerCase().indexOf(this.search.toLowerCase())>-1)
+  }
+
+  public endSearch(){
+    this.search = ''
   }
 }

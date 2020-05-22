@@ -8,11 +8,19 @@
 
 <div class="selected">
     <tag *ngIf="entities" [tag]="entities[active]" [disableEdit]="true" [selected]="true"></tag>
+    <div class="search__bar">
+        <p class="search__text">Search</p>
+        <input type="text" [(ngModel)]="search" class="search" (keyup) ="filter()"/>
+        <button *ngIf="search.length > 0" mat-mini-fab color="warn" (click)="endSearch()"><i class="material-icons" title="Clear">close</i></button>
+
+    </div>
 </div>
 
 
 <div class="children">
-    <tag_children [elements]="children" (setActiveEmitter)="setActive($event)" (removeEmitter)="remove($event)" (editEmitter)="edit($event)"></tag_children>
+    <tag_children *ngIf="search.length === 0" [elements]="children" (setActiveEmitter)="setActive($event)" (removeEmitter)="remove($event)" (editEmitter)="edit($event)"></tag_children>
+    <p *ngIf="search.length > 0"  class="search__results__text">Search Results</p>
+    <tag_children *ngIf="search.length > 0"   [elements]="searchResults" (setActiveEmitter)="setActive($event)" (removeEmitter)="remove($event)" (editEmitter)="edit($event)"></tag_children>
 </div>
 
 
